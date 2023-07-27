@@ -1,0 +1,90 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+body {
+  margin: 0;
+}
+
+#testoAlternato {
+  width: 60%;
+  padding: 2rem;
+  margin-top: 3rem;
+  margin-inline: auto;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Bree Serif", serif;
+  border: solid 3px gray;
+  line-height: 3rem;
+  position: relative;
+}
+
+.parole {
+  color: rgb(131, 128, 128);
+  overflow: hidden;
+  text-align: center;
+}
+
+.parole::after {
+  animation: cycle 10s both infinite;
+  position: absolute;
+
+  content: "";
+}
+span {
+  margin-left: 10px;
+}
+
+@keyframes cycle {
+  0% {
+    content: "interfacce web";
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  12% {
+    content: "interfacce web";
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  24% {
+    content: "interfacce web";
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  36% {
+    content: "single page app";
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  48% {
+    content: "single page app";
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  60% {
+    content: "single page app";
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  72% {
+    content: "app native";
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  84% {
+    content: "app native";
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  96% {
+    content: "app native";
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
